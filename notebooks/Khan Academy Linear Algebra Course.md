@@ -4,6 +4,22 @@ Topics: [[Linear Algebra]]
 Type: 
 Date: 2023-06-19
 
+```clj
+^:nextjournal.clerk/no-cache
+(ns khan-la
+  (:refer-clojure
+   :exclude [+ - * / zero? compare divide numerator denominator
+               infinite? abs ref partial =])
+  (:require [emmy.env :as e :refer :all]
+            ;; [emmy.clerk :as ec]
+            ;; [emmy.leva :as leva]
+            ;; [emmy.mafs :as mafs]
+            ;; [emmy.mathbox.plot :as p]
+            ;; [emmy.viewer :as ev]
+            [nextjournal.clerk :as clerk]
+            ))
+```
+
 ## Vectors
 - vectors have magnitude and direction
 - vectors of same mag and direction but in different locations are _equivalent_
@@ -32,6 +48,15 @@ This describes a parallel line of $S$ offset by vector $\vec{X}$. For all points
 
 $$ L = \left\{ \vec{X} + t\vec{V} \space | \space t\in\mathbb{R} \right\}$$
 - I kinda bounced off this
+
+- [ ] how to draw clerk 2d plane
+
+```
+(def render (comp clerk/tex ->TeX))
+(render ('S = 'a))
+(->infix (asin -10))
+```
+
 - [ ] left off [here](https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/linear-combinations/v/linear-combinations-and-span)
 
 ## Questions
