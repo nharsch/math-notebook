@@ -1,15 +1,16 @@
 {:paths ["dev" "notebooks" "resources"]
  :deps {
         io.github.nextjournal/clerk {:mvn/version "0.14.919"}
+        io.github.mentat-collective/clerk-utils {:git/sha "7edf8bd08c7119c94374face9a2797507edb9500"}
         ;; io.github.nextjournal/clerk-slideshow {:git/sha "977003e581d78f4f554bb8ae73f877f4070925c3"}
 
         ;; keep 1.10 until `kixi/stats` and `sicmutils` fix warnings
-        org.clojure/clojure {:mvn/version "1.10.3"}
+        org.clojure/clojure {:mvn/version "1.11.1"}
 
         ;; emmy stuff
-        io.github.mentat-collective/emmy {:git/sha "a6a79daebb82f95a7239e5ad0e8477ac8a27e539"}
-        io.github.mentat-collective/emmy-viewers {:git/sha "c669a7689ae8e7805e2c8fd28d4d343c78166b62"}
-        ;; io.github.mentat-collective/clerk-utils {:git/sha "b98b74fa025b5543318a6b5beb1622fd35b4906e"}
+        io.github.mentat-collective/emmy {:git/sha "f807468438482773021d86ab293a89b97338405a"}
+        io.github.mentat-collective/emmy-viewers {:git/sha "0a33ca99dc6d189b07bea50c484f2a3eaf2747b0"}
+
         ;; input various external data formats
         com.github.seancorfield/next.jdbc {:mvn/version "1.2.659"}
         meta-csv/meta-csv {:mvn/version "0.1.0"}

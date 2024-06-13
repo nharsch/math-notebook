@@ -11,13 +11,28 @@ Date: 2023-06-19
    :exclude [+ - * / zero? compare divide numerator denominator
                infinite? abs ref partial =])
   (:require [emmy.env :as e :refer :all]
-            ;; [emmy.clerk :as ec]
-            ;; [emmy.leva :as leva]
-            ;; [emmy.mafs :as mafs]
-            ;; [emmy.mathbox.plot :as p]
-            ;; [emmy.viewer :as ev]
             [nextjournal.clerk :as clerk]
+            [emmy.viewer :as ev]
+            [emmy.clerk :as ec]
+            ;; [emmy.leva :as leva]
+            [emmy.mafs :as mafs]
+            [emmy.mathbox.plot :as plot]
             ))
+(ec/install!)
+```
+
+## Emmy examples
+
+```
+; we can render graphs
+(mafs/of-x sin {:color :blue})
+
+; we can render 3D plots
+(plot/scene
+ (plot/of-x {:z sin}))
+
+(plot/scene
+ (plot/of-xy {:z (fn [x] 1)}))
 ```
 
 ## Vectors
@@ -49,17 +64,6 @@ This describes a parallel line of $S$ offset by vector $\vec{X}$. For all points
 $$ L = \left\{ \vec{X} + t\vec{V} \space | \space t\in\mathbb{R} \right\}$$
 - I kinda bounced off this
 
-## TODO
-- [ ] how to draw clerk 2d plane
-
-Emmy examples
-```
-(def render (comp clerk/tex ->TeX))
-
-(render (square (sin (+ 'a 3))))
-
-(render ((D cube) 'x))
-```
 
 
 - [ ] left off [here](https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/linear-combinations/v/linear-combinations-and-span)

@@ -1,8 +1,9 @@
 (ns server
   (:require [nextjournal.clerk :as clerk]
-            [mentat.clerk-utils.build :as b]))
+            [emmy.clerk :as ec]
+))
 
 (defn -main [& args]
-  (b/serve! {:watch-paths ["notebooks"]
-                 :browse? true
-                 :port 6677}))
+  (ec/serve! {:watch-paths ["notebooks"]
+             :browse? true
+             :port 6677}))
